@@ -1,11 +1,11 @@
 package Utils;
 
-import constants.Navegador;
+
 import org.openqa.selenium.WebDriver;
 
 public class DriverContext {
 
-    private static driver.DriverManager driverManager = new driver.DriverManager();
+    private static DriverManager driverManager = new DriverManager();
     private static Navegador tipoNavegador;
     private static String ambienteURL = "";
 

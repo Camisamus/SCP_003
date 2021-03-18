@@ -1,4 +1,4 @@
-package constants;
+package Utils;
 
 public enum Navegador {
     Chrome
