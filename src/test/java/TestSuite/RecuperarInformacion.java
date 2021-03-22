@@ -27,9 +27,16 @@ public class RecuperarInformacion {
         Ingresar inicio = new Ingresar();
         inicio.LoginNoValido();
     }
-   // @Test
+     @Test
     public void prueba002(){
         Ingresar inicio = new Ingresar();
         inicio.LoginValido();
+        inicio.LlenarValido();
+    }
+    @Test
+    public void prueba003(){
+        Ingresar inicio = new Ingresar();
+        inicio.LoginValido();
+        inicio.Buscarregistrosfiltrados();
     }
 }

@@ -1,17 +1,21 @@
-Utils/DriverManager.java
- Utils.DriverManager
- Utils.DriverManager$1
+Pages/Login1.java
+ Pages.Login1
 Utils/DriverContext.java
  Utils.DriverContext
 Utils/ReadProperties.java
  Utils.ReadProperties
-Utils/Navegador.java
- Utils.Navegador
-Utils/Espera.java
- Utils.Espera
-Pages/Login1.java
- Pages.Login1
-TestClases/Ingresar.java
- TestClases.Ingresar
 TestSuite/RecuperarInformacion.java
  TestSuite.RecuperarInformacion
+Utils/Espera.java
+ Utils.Espera
+Utils/Navegador.java
+ Utils.Navegador
+Pages/Formulario1.java
+ Pages.Formulario1
+Utils/DriverManager.java
+ Utils.DriverManager
+ Utils.DriverManager$1
+TestClases/Ingresar.java
+ TestClases.Ingresar
+Pages/Tabla.java
+ Pages.Tabla
