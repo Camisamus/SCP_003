@@ -79,5 +79,6 @@ public class Formulario1 {
                 break;
         }
         System.out.println("se lleno el formulario");
+
     }
 }

@@ -39,4 +39,10 @@ public class RecuperarInformacion {
         inicio.LoginValido();
         inicio.Buscarregistrosfiltrados();
     }
+    @Test
+    public void prueba004(){
+        Ingresar inicio = new Ingresar();
+        inicio.LoginValido();
+        inicio.Subearchivo();
+    }
 }

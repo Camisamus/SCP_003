@@ -4,8 +4,8 @@ Utils/DriverContext.java
  Utils.DriverContext
 Utils/ReadProperties.java
  Utils.ReadProperties
-TestSuite/RecuperarInformacion.java
- TestSuite.RecuperarInformacion
+Pages/Tabla.java
+ Pages.Tabla
 Utils/Espera.java
  Utils.Espera
 Utils/Navegador.java
@@ -17,5 +17,7 @@ Utils/DriverManager.java
  Utils.DriverManager$1
 TestClases/Ingresar.java
  TestClases.Ingresar
-Pages/Tabla.java
- Pages.Tabla
+TestSuite/RecuperarInformacion.java
+ TestSuite.RecuperarInformacion
+Pages/CargaArchivos.java
+ Pages.CargaArchivos

@@ -1,5 +1,6 @@
 package TestClases;
 
+import Pages.CargaArchivos;
 import Pages.Formulario1;
 import Pages.Login1;
 import Pages.Tabla;
@@ -43,5 +44,12 @@ public class Ingresar {
             }
         }
         tb.recorrer();
+    }
+    public void Subearchivo(){
+        Espera.esperar("//*[@id=\"imMnMnNode6\"]/a/span/span/span[2]");
+        DriverContext.getDriver().findElement(By.xpath("//*[@id=\"imMnMnNode6\"]/a/span/span/span[2]")).click();
+        Espera.esperar("//*[@id=\"imMnMnNode6\"]/a/span/span/span[2]");
+        CargaArchivos CA = new CargaArchivos();
+        CA.SubirArchivo();
     }
 }
