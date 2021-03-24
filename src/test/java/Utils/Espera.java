@@ -20,4 +20,8 @@ public class Espera {
         }
         return cargo;
     }
+    public static boolean esperar(int segundos) throws InterruptedException {
+        Thread.sleep(segundos*1000);
+        return true;
+    }
 }

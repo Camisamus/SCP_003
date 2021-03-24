@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DriverManager {
     private DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -24,8 +26,13 @@ public class DriverManager {
         }
         switch(nav) {
             case Chrome:
+                HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+                chromePrefs.put("profile.default_content_settings.popups", 0);
+                chromePrefs.put("download.default_directory", ReadProperties.readFromConfig("Propiedades.properties").getProperty("Rutafolder"));
+                chromePrefs.put("download.prompt_for_download", "false");
                 System.out.println("Se selecciona Chrome");
                 ChromeOptions options = new ChromeOptions();
+                options.setExperimentalOption("prefs", chromePrefs);
                 options.addArguments("--disable-notifications");
                 driverPath = new File(root, "chromedriver"+extensionDriver);
                 System.setProperty("webdriver.chrome.driver", driverPath.getAbsolutePath());

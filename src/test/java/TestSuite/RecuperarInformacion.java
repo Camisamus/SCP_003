@@ -1,8 +1,8 @@
 package TestSuite;
 
 import TestClases.Ingresar;
+import TestClases.pagedescarga;
 import Utils.DriverContext;
-import Utils.DriverManager;
 import Utils.Navegador;
 import Utils.ReadProperties;
 import org.testng.annotations.Test;
@@ -44,5 +44,14 @@ public class RecuperarInformacion {
         Ingresar inicio = new Ingresar();
         inicio.LoginValido();
         inicio.Subearchivo();
+    }
+    @Test
+    public void prueba005(){
+        DriverContext.closeDriver();
+        DriverContext.setUp(Navegador.Chrome,(ReadProperties.readFromConfig("Propiedades.properties").getProperty("RutaDescarga")));
+        pagedescarga DCG = new pagedescarga();
+        DCG.confirmarPreviaDescarga();
+        DCG.descargarsomefile();
+        DCG.confirmarDescarga();
     }
 }
