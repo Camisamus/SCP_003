@@ -1,6 +1,6 @@
 package Utils;
 
-
+import Utils.Constants.Navegador;
 import org.openqa.selenium.WebDriver;
 
 public class DriverContext {
@@ -34,6 +34,10 @@ public class DriverContext {
 
     public static void closeDriver(){
        driverManager.closeDriver();
+    }
+
+    public static String getTipoNavegador() {
+        return tipoNavegador.toString();
     }
 
 }

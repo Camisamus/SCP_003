@@ -1,27 +1,45 @@
-Pages/Login1.java
- Pages.Login1
-Pages/CargaArchivos.java
- Pages.CargaArchivos
-Utils/ReadProperties.java
- Utils.ReadProperties
-Pages/Tabla.java
- Pages.Tabla
-Pages/Formulario1.java
- Pages.Formulario1
-Utils/Navegador.java
- Utils.Navegador
 TestClases/Ingresar.java
  TestClases.Ingresar
-Utils/Espera.java
- Utils.Espera
-Utils/DriverContext.java
- Utils.DriverContext
+Utils/Constants/Navegador.java
+ Utils.Constants.Navegador
 TestClases/pagedescarga.java
  TestClases.pagedescarga
 Pages/Descarga.java
  Pages.Descarga
+Utils/Utils.java
+ Utils.Utils
 TestSuite/RecuperarInformacion.java
  TestSuite.RecuperarInformacion
+Utils/Reporte/ImageResize.java
+ Utils.Reporte.ImageResize
+Utils/Constants/Constants.java
+ Utils.Constants.Constants
+Utils/Constants/Ambientes.java
+ Utils.Constants.Ambientes
+Pages/CargaArchivos.java
+ Pages.CargaArchivos
+Utils/DriverContext.java
+ Utils.DriverContext
+Utils/Reporte/EstadoPrueba.java
+ Utils.Reporte.EstadoPrueba
+Utils/Reporte/PdfQaNovaReports.java
+ Utils.Reporte.PdfQaNovaReports
+ Utils.Reporte.PdfQaNovaReports$1
+Utils/ReadProperties.java
+ Utils.ReadProperties
+Utils/SendMail.java
+ Utils.SendMail
+ Utils.SendMail$1
+Utils/Espera.java
+ Utils.Espera
+Pages/Tabla.java
+ Pages.Tabla
 Utils/DriverManager.java
  Utils.DriverManager
  Utils.DriverManager$1
+Pages/Login1.java
+ Pages.Login1
+Utils/Validaciones.java
+ Utils.Validaciones
+Pages/Formulario1.java
+ Pages.Formulario1
