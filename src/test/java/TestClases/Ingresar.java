@@ -4,13 +4,27 @@ import Pages.CargaArchivos;
 import Pages.Formulario1;
 import Pages.Login1;
 import Pages.Tabla;
+import TestClases.Model.Usuario;
+import Utils.Constants.Navegador;
 import Utils.DriverContext;
 import Utils.Espera;
 import Utils.ReadProperties;
+import Utils.Reporte.EstadoPrueba;
+import Utils.Reporte.PdfQaNovaReports;
 import Utils.SendMail;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 public class Ingresar {
 
     public void LoginNoValido(){
@@ -78,5 +92,67 @@ public class Ingresar {
         Espera.esperar("//*[@id=\"imObjectForm_1_submit\"]");
         Formulario1 fr = new Formulario1();
         fr.enviar();
+    }
+
+    public void cambiarColor(){
+
+        JavascriptExecutor js = (JavascriptExecutor) DriverContext.getDriver();
+        js.executeScript("document.getElementById(\"imUname\").setAttribute('style','background: #ff0000');");
+        js.executeScript("document.getElementById(\"imPwd\").setAttribute('style','color: #00ff00');");
+
+        try {
+            Espera.esperar(50);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    public void IngresoMultiple(){
+
+        //JSON parser object to parse read file
+        JSONParser jsonParser = new JSONParser();
+
+        try (FileReader reader = new FileReader(ReadProperties.readFromConfig("Propiedades.properties").getProperty("Rutafolder")+"\\usuarios.json"))
+        {
+            //PdfQaNovaReports.addReport("Se lee el json","se pudo encontrar y leer el archivo.json de usuarios", EstadoPrueba.DONE,false);
+            //Read JSON file
+            Object obj = jsonParser.parse(reader);
+
+            JSONArray listaUsuario = (JSONArray) obj;
+            System.out.println(listaUsuario);
+            ArrayList<Usuario> usus = new ArrayList<Usuario>();
+            //Iterate over employee array
+            listaUsuario.forEach( emp -> usus.add(parseUsuarioObject( (JSONObject) emp) ) );
+            Login1 ing = new Login1();
+            for (Usuario usuario : usus) {
+                ing.LoggearBien2(usuario);
+                ing.DELoggear();
+            }
+        } catch (FileNotFoundException e) {
+            PdfQaNovaReports.addReport("Se lee el json fallo","NO se pudo encontrar y leer el archivo.json de usuarios por : "+ e, EstadoPrueba.FAILED,false);
+            e.printStackTrace();
+        } catch (IOException e) {
+            PdfQaNovaReports.addReport("Se lee el json fallo","NO se pudo encontrar y leer el archivo.json de usuarios por : "+ e, EstadoPrueba.FAILED,false);
+            e.printStackTrace();
+        } catch (ParseException e) {
+            PdfQaNovaReports.addReport("Se lee el json fallo","NO se pudo encontrar y leer el archivo.json de usuarios por : "+ e, EstadoPrueba.FAILED,false);
+            e.printStackTrace();
+        }
+    }
+
+
+    private static Usuario parseUsuarioObject(JSONObject Usuario)
+    {
+        Usuario usu =new Usuario();
+        //Get employee object within list
+        JSONObject UsuarioObject = (JSONObject) Usuario.get("usuario");
+
+        //Get employee first name
+        String Cuenta = (String) UsuarioObject.get("nombre");
+        usu.setCuenta(Cuenta);
+
+        //Get employee last name
+        String Clave = (String) UsuarioObject.get("clave");
+        usu.setClave(Clave);
+        return usu;
     }
 }

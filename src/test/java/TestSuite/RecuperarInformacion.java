@@ -1,13 +1,20 @@
 package TestSuite;
 
 import TestClases.Ingresar;
+import TestClases.Model.Producto;
+import TestClases.Sodimac;
+import TestClases.bdd;
 import TestClases.pagedescarga;
 import Utils.Constants.Navegador;
 import Utils.DriverContext;
 import Utils.ReadProperties;
+import Utils.Reporte.PdfQaNovaReports;
 import org.testng.annotations.Test;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+
+import java.sql.SQLException;
+import java.util.List;
 
 public class RecuperarInformacion {
 
@@ -15,11 +22,13 @@ public class RecuperarInformacion {
     @BeforeTest
     public void setUp(){
         DriverContext.setUp(Navegador.Chrome,(ReadProperties.readFromConfig("Propiedades.properties").getProperty("Ruta")));
+        PdfQaNovaReports.createPDF();
     }
 
     @AfterTest
     public void end(){
         DriverContext.closeDriver();
+        PdfQaNovaReports.closePDF();
     }
 
     @Test
@@ -69,4 +78,29 @@ public class RecuperarInformacion {
         inicio.enviaform();
         inicio.Buscarregistrosfiltra2();
     }
+    @Test
+    public void prueba008() throws SQLException {
+        bdd base = new bdd();
+        base.consultar();
+        base.insertar();
+        base.modificar();
+    }
+    @Test
+    public void prueba009() throws SQLException {
+        Ingresar inicio = new Ingresar();
+        inicio.cambiarColor();
+    }
+    @Test
+    public void prueba010(){
+        DriverContext.closeDriver();
+        DriverContext.setUp( Navegador.Chrome2, (ReadProperties.readFromConfig("Propiedades.properties").getProperty("RutaSodimac")));
+        Sodimac sod = new Sodimac();
+        List<Producto> productos = sod.obtenerProductos();
+    }
+    @Test
+    public void prueba011(){
+        Ingresar masing = new Ingresar();
+        masing.IngresoMultiple();
+    }
+
 }

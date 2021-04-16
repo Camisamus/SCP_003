@@ -1,7 +1,11 @@
 package Pages;
 
+import TestClases.Model.Usuario;
 import Utils.DriverContext;
 import Utils.ReadProperties;
+import Utils.Reporte.EstadoPrueba;
+import Utils.Reporte.PdfQaNovaReports;
+import Utils.Validaciones;
 import Utils.Espera;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,6 +30,9 @@ public class Login1 {
     @FindBy(xpath = "//*[@id=\"imLoginPage\"]/div[3]/div")
     WebElement ERRMSG;
 
+    @FindBy(xpath = "//*[@id=\"imHeader_pluginAppObj_02\"]/a")
+    WebElement BtnSalir;
+
 
 
     public void LoggearMAL(){
@@ -36,6 +43,17 @@ public class Login1 {
         TXTUsuario.sendKeys(ReadProperties.readFromConfig("Propiedades.properties").getProperty("Usuario"));
         TXTContrasena.sendKeys(ReadProperties.readFromConfig("Propiedades.properties").getProperty("Clave"));
         BTNLogin.click();
+    }
+    public void LoggearBien2(Usuario usu){
+        Validaciones.validarObjeto(TXTUsuario,"Esta Txt Usuario");
+        TXTUsuario.sendKeys(usu.getCuenta());
+        TXTContrasena.sendKeys(usu.getClave());
+        PdfQaNovaReports.addWebReportImage("Se inicio Sesion","se uso un usuario de la lista para tratar de iniciar sesion \""+usu.getCuenta()+"\"", EstadoPrueba.DONE,false);
+        BTNLogin.click();
+    }
+    public void DELoggear(){
+        Validaciones.validarObjeto(BtnSalir,"Esta BtnSalir");
+        BtnSalir.click();
     }
 
     public WebElement getERRMSG() {
