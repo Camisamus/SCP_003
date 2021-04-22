@@ -1,10 +1,7 @@
 package TestSuite;
 
-import TestClases.Ingresar;
+import TestClases.*;
 import TestClases.Model.Producto;
-import TestClases.Sodimac;
-import TestClases.bdd;
-import TestClases.pagedescarga;
 import Utils.Constants.Navegador;
 import Utils.DriverContext;
 import Utils.ReadProperties;
@@ -101,6 +98,12 @@ public class RecuperarInformacion {
     public void prueba011(){
         Ingresar masing = new Ingresar();
         masing.IngresoMultiple();
+    }
+    @Test
+    public void prueba012(){
+        DriverContext.getDriver().navigate().to(ReadProperties.readFromConfig("Propiedades.properties").getProperty("RutaChileautos"));
+        chileautos cla = new chileautos();
+        cla.Buscar();
     }
 
 }

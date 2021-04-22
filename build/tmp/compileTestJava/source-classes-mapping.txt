@@ -51,7 +51,15 @@ Pages/Tabla.java
  Pages.Tabla
 TestClases/Ingresar.java
  TestClases.Ingresar
-TestSuite/RecuperarInformacion.java
- TestSuite.RecuperarInformacion
 Pages/Login1.java
  Pages.Login1
+TestSuite/RecuperarInformacion.java
+ TestSuite.RecuperarInformacion
+Pages/Chileautos/Inicio.java
+ Pages.Chileautos.Inicio
+Pages/Chileautos/Busqueda.java
+ Pages.Chileautos.Busqueda
+Pages/Chileautos/Auto.java
+ Pages.Chileautos.Auto
+TestClases/chileautos.java
+ TestClases.chileautos
