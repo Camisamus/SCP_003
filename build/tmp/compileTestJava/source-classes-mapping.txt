@@ -53,13 +53,15 @@ TestClases/Ingresar.java
  TestClases.Ingresar
 Pages/Login1.java
  Pages.Login1
-TestSuite/RecuperarInformacion.java
- TestSuite.RecuperarInformacion
+TestClases/chileautos.java
+ TestClases.chileautos
 Pages/Chileautos/Inicio.java
  Pages.Chileautos.Inicio
 Pages/Chileautos/Busqueda.java
  Pages.Chileautos.Busqueda
 Pages/Chileautos/Auto.java
  Pages.Chileautos.Auto
-TestClases/chileautos.java
- TestClases.chileautos
+TestClases/api.java
+ TestClases.api
+TestSuite/RecuperarInformacion.java
+ TestSuite.RecuperarInformacion

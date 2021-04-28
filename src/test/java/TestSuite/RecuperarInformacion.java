@@ -105,5 +105,25 @@ public class RecuperarInformacion {
         chileautos cla = new chileautos();
         cla.Buscar();
     }
+    @Test
+    public void prueba013(){
+        api ap = new api();
+        try {
+            ap.aptTesting();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+    @Test
+    public void prueba014(){
+        api ap = new api();
+        try {
+            ap.consultarfarmacias();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 
 }
