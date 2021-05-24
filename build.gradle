@@ -19,8 +19,10 @@ dependencies {
     implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.23'
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.23'
     compile 'com.googlecode.json-simple:json-simple:1.1.1'
-
+    compile group: 'io.appium', name: 'java-client', version: '5.0.4'
 }
+
+
 
 test{
     useTestNG()

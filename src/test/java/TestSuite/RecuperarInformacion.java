@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -121,6 +122,16 @@ public class RecuperarInformacion {
         try {
             ap.consultarfarmacias();
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+    @Test
+    public void prueba015(){
+        compararImagenes ci = new compararImagenes();
+        try {
+            System.out.println(ci.compararColores());
+        } catch (IOException e) {
             e.printStackTrace();
         }
 

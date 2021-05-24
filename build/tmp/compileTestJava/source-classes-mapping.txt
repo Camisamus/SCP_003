@@ -1,67 +1,40 @@
-Utils/SendMail.java
- Utils.SendMail
- Utils.SendMail$1
-TestClases/pagedescarga.java
- TestClases.pagedescarga
-Utils/Reporte/ImageResize.java
- Utils.Reporte.ImageResize
-Utils/Constants/Constants.java
- Utils.Constants.Constants
-Utils/Constants/Ambientes.java
- Utils.Constants.Ambientes
-Utils/DriverContext.java
- Utils.DriverContext
-Utils/Reporte/EstadoPrueba.java
- Utils.Reporte.EstadoPrueba
-Utils/Reporte/PdfQaNovaReports.java
- Utils.Reporte.PdfQaNovaReports
- Utils.Reporte.PdfQaNovaReports$1
-Utils/Validaciones.java
- Utils.Validaciones
-Utils/Espera.java
- Utils.Espera
-TestClases/Model/Producto.java
- TestClases.Model.Producto
-Utils/DriverManager.java
- Utils.DriverManager
- Utils.DriverManager$1
+TestClases/Ingresar.java
+ TestClases.Ingresar
 Utils/Constants/Navegador.java
  Utils.Constants.Navegador
 Pages/PageSodimac.java
  Pages.PageSodimac
+TestClases/api.java
+ TestClases.api
+TestClases/pagedescarga.java
+ TestClases.pagedescarga
 Pages/Descarga.java
  Pages.Descarga
-Utils/Utils.java
- Utils.Utils
-Pages/Formulario1.java
- Pages.Formulario1
+TestSuite/RecuperarInformacion.java
+ TestSuite.RecuperarInformacion
+TestClases/compararImagenes.java
+ TestClases.compararImagenes
+Pages/Chileautos/Auto.java
+ Pages.Chileautos.Auto
+TestClases/chileautos.java
+ TestClases.chileautos
 Pages/CargaArchivos.java
  Pages.CargaArchivos
 TestClases/Model/Usuario.java
  TestClases.Model.Usuario
-Utils/Conexion.java
- Utils.Conexion
+Pages/Chileautos/Inicio.java
+ Pages.Chileautos.Inicio
 TestClases/Sodimac.java
  TestClases.Sodimac
-Utils/ReadProperties.java
- Utils.ReadProperties
+Pages/Chileautos/Busqueda.java
+ Pages.Chileautos.Busqueda
 TestClases/bdd.java
  TestClases.bdd
 Pages/Tabla.java
  Pages.Tabla
-TestClases/Ingresar.java
- TestClases.Ingresar
+Pages/Formulario1.java
+ Pages.Formulario1
+TestClases/Model/Producto.java
+ TestClases.Model.Producto
 Pages/Login1.java
  Pages.Login1
-TestClases/chileautos.java
- TestClases.chileautos
-Pages/Chileautos/Inicio.java
- Pages.Chileautos.Inicio
-Pages/Chileautos/Busqueda.java
- Pages.Chileautos.Busqueda
-Pages/Chileautos/Auto.java
- Pages.Chileautos.Auto
-TestClases/api.java
- TestClases.api
-TestSuite/RecuperarInformacion.java
- TestSuite.RecuperarInformacion
